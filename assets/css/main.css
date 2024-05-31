@@ -45,6 +45,8 @@ Version: 1.0.0
 
 .who{
   text-align: center;
+  font-weight: bold;
+  font-size: 50px;
 }
 
 .sam{
@@ -138,6 +140,12 @@ Version: 1.0.0
     font-size: 20px;
     text-align: center;
     font-weight: bold;
+  }
+
+  .who{
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
   }
   
   .of{
