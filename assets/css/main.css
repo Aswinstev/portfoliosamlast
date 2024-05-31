@@ -166,18 +166,6 @@ Version: 1.0.0
     margin-bottom: -40px;
   }
 
-  .ab{
-    margin-left: 160px
-  }
-  
-  .text-white{
-    margin-left: 32px;
-  }
-
-  .about-button{
-    margin-left: 130px;
-  }
-
   .float{
     position:fixed;
     width:40px;
@@ -197,6 +185,7 @@ Version: 1.0.0
   }
   
 }
+
 
 .theme-btn {
   background-color: var(--theme);
