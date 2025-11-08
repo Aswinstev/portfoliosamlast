@@ -820,7 +820,7 @@ input.main-search-input::placeholder {
 }
 
 .section-padding {
-  padding: 120px 0;
+  padding: 50px 0;
 }
 @media (max-width: 1199px) {
   .section-padding {
@@ -829,7 +829,7 @@ input.main-search-input::placeholder {
 }
 @media (max-width: 991px) {
   .section-padding {
-    padding: 80px 0;
+    padding: 50px 0;
   }
 }
 @keyframes rippleOne {
@@ -6661,7 +6661,6 @@ input.main-search-input::placeholder {
 }
 .testimonial-wrapper.style-2 .testimonial-image {
   height: 393px;
-  margin-top: -160px;
   width: 960px;
 }
 @media (max-width: 991px) {
@@ -9397,4 +9396,33 @@ p.sticky-label {
     height: clamp(220px, 58vw, 340px);
     aspect-ratio: 1 / 1;                 /* square-ish on very narrow screens */
   }
+}
+
+
+
+/* WORKS: remove the big space under the heading */
+#work .section-title{
+  margin-bottom: 0px !important;   /* was ~60–100px */
+}
+#work .section-title span{
+  display: block;
+  margin-bottom: 6px !important;
+}
+
+/* ensure the slider itself doesn’t add extra top space */
+#work .swiper.portfolio-slider-tex{
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* some themes add margins on inner items—neutralize here */
+#work .portfolio-single-items,
+#work .portfolio-image{
+  margin-top: 0 !important;
+}
+
+/* if your theme draws decorative lines via pseudo-elements, hide them */
+#work .section-title::before,
+#work .section-title::after{
+  content: none !important;
 }
