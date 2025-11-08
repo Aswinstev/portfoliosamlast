@@ -9230,3 +9230,171 @@ p.sticky-label {
 .button2{
   color: white;
 }
+
+
+
+
+/* === ABOUT (match mockup exactly) === */
+#about .about-centered{
+  max-width: 520px;              /* keeps it tight like the mockup */
+  margin: 0 auto;                /* center in the container */
+  text-align: center;
+}
+
+#about .about-heading{
+  margin: 0 0 16px;
+  font-size: clamp(20px, 4vw, 28px);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--ter-olive, #8A9E4D);   /* green from mockup; change var if you have one */
+  text-transform: uppercase;
+}
+
+#about .about-card{
+  display: block;
+  position: relative;
+  width: 100%;
+  line-height: 0;                 /* removes tiny gaps below images */
+  overflow: hidden;
+}
+
+#about .about-card img{
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  background: #d9d9d9;           /* the grey fill behind portrait area (as in mockup) */
+}
+
+/* Bottom overlay band */
+#about .about-band{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.60);   /* dark translucent band */
+  color: #fff;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: clamp(14px, 2.6vw, 18px);
+  padding: 32px 16px;
+  text-align: center;
+  pointer-events: none;           /* keeps the entire card clickable */
+}
+
+/* Optional: if earlier overlap rules exist, neutralize them here */
+#about .about-stack{ display: block !important; }
+
+
+
+/* === Slider captions: match the ABOUT overlay band === */
+.portfolio-section-2 .portfolio-single-items .portfolio-image{
+  position: relative;          /* anchor for the band */
+  overflow: hidden;
+}
+
+.portfolio-section-2 .portfolio-single-items .portfolio-image .portfolio-content{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;                   /* stick to bottom like the mockup */
+  background: rgba(0,0,0,0.60);
+  padding: 12px 16px;
+  text-align: center;
+  z-index: 2;
+}
+
+.portfolio-section-2 .portfolio-single-items .portfolio-image .portfolio-content h3{
+  margin: 0;
+}
+
+.portfolio-section-2 .portfolio-single-items .portfolio-image .portfolio-content h3 a{
+  display: block;
+  color: #fff;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: clamp(14px, 2.6vw, 18px);
+  text-decoration: none;
+}
+
+/* Clickable cursor + keep caption link clickable */
+.portfolio-section-2 .portfolio-image{ cursor: pointer; }
+.portfolio-section-2 .portfolio-image .portfolio-content{ pointer-events: none; }
+.portfolio-section-2 .portfolio-image .portfolio-content a{ pointer-events: auto; }
+
+
+
+
+
+/* Centered nav under slider */
+.portfolio-section-2 .portfolio-nav{
+  position: static !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin: 22px auto 0 !important;
+  z-index: 2;
+}
+
+.portfolio-section-2 .nav-btn{
+  --size: 56px;
+  width: var(--size); height: var(--size);
+  border-radius: 50%;
+  display: inline-flex; justify-content: center; align-items: center;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.28);
+  color: #fff; cursor: pointer; position: relative; overflow: hidden;
+  transition: transform .18s ease, border-color .25s ease, background .25s ease;
+  outline: none;
+}
+
+/* small entrance + hover */
+.portfolio-section-2 .nav-btn{ opacity: 0; transform: translateY(12px); animation: rise-in .45s .2s both ease-out; }
+.portfolio-section-2 .nav-btn.next{ animation-delay: .28s; }
+@keyframes rise-in{ from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:translateY(0)} }
+.portfolio-section-2 .nav-btn:hover{ border-color:#fff; background: rgba(255,255,255,.1); }
+.portfolio-section-2 .nav-btn.prev:hover svg{ transform: translateX(-3px); }
+.portfolio-section-2 .nav-btn.next:hover svg{ transform: translateX(3px); }
+.portfolio-section-2 .nav-btn svg{ transition: transform .22s ease; }
+
+/* ensure theme margins don't push arrows away */
+.array-button{ margin-left: 0 !important; }
+
+
+
+
+
+/* === Testimonial image: mobile-friendly === */
+.testimonial-section-5 .testimonial-image{
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Tablets & below: shrink and show the whole graphic (no crop) */
+@media (max-width: 991.98px){
+  .testimonial-section-5 .testimonial-image{
+    /* prevent giant desktop height */
+    min-height: 0 !important;
+    height: clamp(200px, 45vw, 320px);   /* responsive height */
+    aspect-ratio: 16 / 10;               /* keeps a nice rectangle */
+    background-size: contain !important; /* show full icon, no cropping */
+    margin-bottom: 18px;                 /* spacing above the text column */
+    border-radius: 12px;                 /* optional: softer look */
+  }
+
+  /* don’t vertically center the stacked columns on mobile */
+  .testimonial-wrapper-2 .row.g-0{
+    align-items: stretch !important;
+  }
+}
+
+/* Small phones: a bit taller for readability */
+@media (max-width: 575.98px){
+  .testimonial-section-5 .testimonial-image{
+    height: clamp(220px, 58vw, 340px);
+    aspect-ratio: 1 / 1;                 /* square-ish on very narrow screens */
+  }
+}
