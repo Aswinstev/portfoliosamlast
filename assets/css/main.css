@@ -9245,7 +9245,7 @@ p.sticky-label {
   font-size: clamp(20px, 4vw, 28px);
   font-weight: 600;
   letter-spacing: 0.08em;
-  color: var(--ter-olive, #8A9E4D);   /* green from mockup; change var if you have one */
+  color: var(--theme);   /* green from mockup; change var if you have one */
   text-transform: uppercase;
 }
 
